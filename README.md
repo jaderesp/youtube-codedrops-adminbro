@@ -101,7 +101,6 @@ We will need
    AdminBro.registerAdapter(AdminBroMongoose)
    
    // config
-   const rootPath = '/admin'
    const adminBroOptions = new AdminBro({
    	resources: [Project],
      rootPath
@@ -137,12 +136,11 @@ We will need
 
 https://adminbro.com/tutorial-customizing-resources.html
 
-1. Change company name, Article name and add options to resource
+1. Change Project menu name and add options to resource
 
 ```js
 const adminBroOptions = new AdminBro({
 	resources: [
-    User,
     { resource: Project, options: {
       properties: {
         description: { type: 'richtext' },
@@ -155,11 +153,11 @@ const adminBroOptions = new AdminBro({
   locale: {
     translations: {
       labels: {
-        Article: 'My Projects'
+        Project: 'My Projects'
       }
     }
   },
-  rootPath
+  rootPath: '/admin'
 })
 ```
 
